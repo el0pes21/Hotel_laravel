@@ -1,0 +1,41 @@
+- Node JS
+- Vue / Vuetify
+- Mongo DB
+- Mongosh
+
+db.createUser(
+  {
+    user: "user",
+    pwd: "1234",
+    roles: [ { role: "readWrite", db: "hotels" }]
+  }
+)
+
+http://localhost:9000/   UI
+
+http://localhost:3000/   API
+
+
+nom run dev
+node index.js
+
+Sprint 3
+
+- Criação de projecto base para a User Interface baseado em Vue/Vuetify
+- Criação da estrutura base das páginas com menu sandwich
+- Criação da Página Home
+- Criação da Página Serviços
+- Criação da Página Colaboradores
+- Criação de projecto base para a API baseado em Node/Express
+- Implementação endpoint (API) para devolver dados para a página de colaboradores
+- Configuração da MongoDB
+
+Sprint 4
+
+- Análise de requisitos para a página de contactos
+- Criação da Página de Contactos com o Formulário
+- Implementação endpoint (API) para guardar informação da página de contactos
+- Criação de Área Reservada
+- Implementar um login de funcionário
+- Criação de Página para Listar os contactos que foram efetuados pelo website
+
