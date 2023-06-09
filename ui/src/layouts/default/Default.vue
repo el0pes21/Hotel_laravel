@@ -27,7 +27,7 @@
       <router-view />
     </v-main>
 
-    <v-footer>Trabalho desenvolvido pelo Grupo Nº XXX</v-footer>
+    <v-footer>Trabalho desenvolvido pelo Grupo dos 4 </v-footer>
   </v-app>
 </template>
 
