@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
   
 const app = express();
 app.use(cors());
+app.use(express.json())
 
 const port = process.env.PORT || 3000;
 
@@ -24,6 +25,7 @@ const colaboradoresSchema = new mongoose.Schema({
 });
 
 const Colaboradores = mongoose.model('colaboradores', colaboradoresSchema);
+
   
 app.use(bodyParser.urlencoded({
     extended: true
@@ -38,6 +40,32 @@ app.get('/colaboradores', async (req, res) => {
 } catch (err) {
     res.status(500).json(err);
 }});
+
+const contactosSchema = new mongoose.Schema({
+  firstname: String,
+  lastname: String,
+  email: String,
+  message: String
+});
+const Contactos = mongoose.model('contactos', contactosSchema);
+
+app.post('/contacts', (req, res) => {
+  let data = req.body;
+  Contactos.create(
+    { firstname: data.firstName,
+      lastname: data.lastName,
+      email: data.email,
+      message: data.message
+    }    
+  ).then(result => {
+    console.log(result)
+    res.status(200).json(result)
+  }
+  ).catch ( err => {
+    res.status(500).json(err);
+  });
+  
+})
 
 
 app.listen(port, function() {
